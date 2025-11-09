@@ -9,7 +9,7 @@ ARG RUNNER_IMAGE="debian:${DEBIAN_VERSION}"
 
 FROM ${BUILDER_IMAGE} AS builder
 
-ARG TARGETPLATFORM
+ARG TARGETPLATFORM=linux/amd64
 RUN echo "Building for ${TARGETPLATFORM:?}"
 
 # install build dependencies
