@@ -29,7 +29,7 @@ RUN apt-get update -y && \
     mix local.rebar --force && \
     # FFmpeg (latest build that doesn't cause an illegal instruction error for some users - see #347)
     export FFMPEG_DOWNLOAD=$(case ${TARGETPLATFORM:-linux/amd64} in \
-    "linux/amd64")   echo "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-09-25-18-11/ffmpeg-N-121208-g2c8835dd72-linux64-gpl.tar.xz"   ;; \
+    "linux/amd64")   echo "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz"   ;; \
     "linux/arm64")   echo "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-09-25-18-11/ffmpeg-N-121208-g2c8835dd72-linuxarm64-gpl.tar.xz" ;; \
     *)               echo ""        ;; esac) && \
     curl -L ${FFMPEG_DOWNLOAD} --output /tmp/ffmpeg.tar.xz && \
